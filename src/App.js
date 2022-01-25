@@ -6,17 +6,14 @@ import { useState } from "react"
 
 function App() {
 
-  const [bookInfo, setBookInfo] = useState()
+  const [bookInfo, setBookInfo] = useState(null)
 
   return (
     <div className="App">
-      <SearchBooks onSelectBooks={setBookInfo} />
-      {bookInfo &&
-        bookInfo.map(book => {
-        return(
-          <BookCard bookInfo={book} />
-        )
-      })}
+      <SearchBooks setBookInfo={setBookInfo} />
+      {bookInfo && 
+        bookInfo.map( book => <BookCard bookInfo={book} />)
+      }
       
     </div>
   );

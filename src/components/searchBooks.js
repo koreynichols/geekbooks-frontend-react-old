@@ -1,19 +1,20 @@
 import axios from 'axios';
 import { useRef } from 'react';
 
-export default function SearchBooks(props) {
+export default function SearchBooks({ setBookInfo }) {
 
-    const searchRef= useRef()
-    const authorRef = useRef()
-    const titleRef = useRef()
+    const searchRef= useRef(null)
+    const authorRef = useRef(null)
+    const titleRef = useRef(null)
 
 
     function search(e){
         e.preventDefault()
 
+
         let search = searchRef.current.value;
-        if(authorRef) search += "+inauthor:" + authorRef.current.value
-        if(titleRef) search += "+intitle:" + titleRef.current.value
+        if(authorRef.current.value) search += "+inauthor:" + authorRef.current.value
+        if(titleRef.current.value) search += "+intitle:" + titleRef.current.value
 
         const searchParam = {
             "q" : search
@@ -25,7 +26,7 @@ export default function SearchBooks(props) {
             .post("http://localhost:8000/google-api/", searchParam)
             .then(res => {
                 console.log(res.data.items[0]);
-                this.props.onSelectBooks(res.data)
+                setBookInfo(res.data.items)
             })
         return;
     }
