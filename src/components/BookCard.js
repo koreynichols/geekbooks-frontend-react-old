@@ -1,13 +1,17 @@
 import React from 'react';
 
-export default function BookCard(bookInfo) {
+export default function BookCard({ bookInfo }) {
 
-    console.log(bookInfo.bookInfo)
+    console.log(bookInfo)
 
 
     return (
       <div>
-          <h2>{bookInfo.bookInfo.volumeInfo.title}</h2>
+          <img src={bookInfo.volumeInfo.imageLinks.thumbnail} /><br />
+          <label>Title : </label>
+          <p>{bookInfo.volumeInfo.title}</p>
+          <label>Author : </label>
+          <p>{bookInfo.volumeInfo.authors}</p>
       </div>
   );
 }

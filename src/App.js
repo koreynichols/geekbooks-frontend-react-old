@@ -7,6 +7,7 @@ import { useState } from "react"
 function App() {
 
   const [bookInfo, setBookInfo] = useState(null)
+  console.log(bookInfo)
 
   return (
     <div className="App">
