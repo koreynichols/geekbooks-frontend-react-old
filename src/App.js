@@ -12,10 +12,11 @@ function App() {
   return (
     <div className="App">
       <SearchBooks setBookInfo={setBookInfo} />
-      {bookInfo && 
-        bookInfo.map( book => <BookCard bookInfo={book} />)
-      }
-      
+      <div className="two-column">
+        {bookInfo && 
+          bookInfo.map( book => <BookCard bookInfo={book} />)
+        }
+      </div>
     </div>
   );
 }
