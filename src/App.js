@@ -14,7 +14,7 @@ function App() {
       <SearchBooks setBookInfo={setBookInfo} />
       <div className="two-column">
         {bookInfo && 
-          bookInfo.map( book => <BookCard bookInfo={book} />)
+          bookInfo.map( book => <BookCard bookInfo={book} key={book.id} />)
         }
       </div>
     </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useRef } from 'react';
-
+import './SearchBooks.css'
 export default function SearchBooks({ setBookInfo }) {
 
     const searchRef= useRef(null)
@@ -31,15 +31,23 @@ export default function SearchBooks({ setBookInfo }) {
         return;
     }
 
-  return <div>
-      <form>
-          <label>Search</label>
-          <input type="text" ref={searchRef}></input><br />
-          <label>Book Title</label>
-          <input type="text" ref={titleRef}></input><br />
-          <label>Book Author</label>
-          <input type="text" ref={authorRef}></input><br />
-          <button onClick={search}>Search</button>
-      </form>
-  </div>;
+  return (
+    <div className="search-books">
+        <form>
+            <div>
+                <label>Search : </label>
+                <input type="text" ref={searchRef}></input><br />
+            </div>
+            <div>
+                <label>Book Title : </label>
+                <input type="text" ref={titleRef}></input><br />
+            </div>
+            <div>
+                <label>Book Author : </label>
+                <input type="text" ref={authorRef}></input><br />
+            </div>
+            <button onClick={search}>Search</button>
+        </form>
+    </div>
+  );
 }

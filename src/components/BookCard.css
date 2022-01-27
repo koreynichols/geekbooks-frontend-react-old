@@ -1,0 +1,32 @@
+
+
+.book-card {
+    border: solid 1px;
+    box-shadow: 8px 8px 10px 1px rgba(0, 0, 255, .2);
+    border-radius: 12px;
+    width: 35%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+
+  .book-card:hover {
+    cursor: pointer;
+    box-shadow: 8px 8px 10px 20px rgba(0, 0, 255, .2);
+    background: rgba(200, 200, 200, .8);
+  }
+  
+  .book-card img{
+    height: 250px;
+  }
+  
+  .same-line p{
+    display: inline;
+    width: 40%;
+  }
+  
+  .two-column{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }

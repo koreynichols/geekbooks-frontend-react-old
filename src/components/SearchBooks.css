@@ -1,0 +1,17 @@
+.search-books {
+    margin: 10px auto;
+}
+
+.search-books div {
+    margin: 10px auto;
+}
+
+.search-books button {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    background-color: gray;
+    border-radius: 20px;
+    border-color: black;
+    height: 30px;
+    width: 80px
+}
