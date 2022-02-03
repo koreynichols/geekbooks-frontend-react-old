@@ -1,5 +1,6 @@
 import React from 'react';
 import './BookCard.css';
+import noPhoto from '../No-Photo-Available.jpg';
 
 
 export default function BookCard({ bookInfo }) {
@@ -13,6 +14,7 @@ export default function BookCard({ bookInfo }) {
     try {
       image = bookInfo.volumeInfo.imageLinks.thumbnail
     } catch (error) {
+      image = noPhoto
       console.log(error)
     }
 
